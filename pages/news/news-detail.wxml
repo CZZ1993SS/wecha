@@ -1,0 +1,18 @@
+<!--pages/news/news-detail.wxml-->
+<view class="detail-container">
+   <view class="detail-image" style="background: url('{{newsData.newsUrl}}'); background-size: 100% auto;">
+   <view class="news-share">
+     <image src="../../images/share.png"></image>
+     <button open-type="share"></button>
+   </view>
+   </view>
+   <view class="author-info">
+     <image class="author-image" src="{{newsData.writersUrl}}"></image>
+     <text class="author">{{newsData.writers}}</text>
+     <text class="publish">发表于 {{newsData.publishDateStr}}</text>
+   </view>
+   <view class="title">{{newsData.title}}</view>
+   <view class="content">{{newsData.content}}</view>
+</view>
+
+

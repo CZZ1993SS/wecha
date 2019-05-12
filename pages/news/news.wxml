@@ -1,0 +1,20 @@
+<!--pages/news.wxml-->
+<import src="../template/template.wxml" />
+
+<swiper indicator-dots='true' autoplay='true' interval='8000' class="news-banner">
+  <swiper-item wx:for="{{bannerImages}}" wx:key="news" wx:for-item="newsImage">
+   <image src="{{newsImage}}"></image>
+  </swiper-item>
+</swiper>
+
+<view class="news-list">
+
+     <!-- 使用模版  -->
+     <block wx:for="{{newsList}}" wx:key="index" wx:for-item="new">
+       <template is="newsItem" data="{{new, index: index}}" />
+     </block>
+
+</view>
+  
+
+  

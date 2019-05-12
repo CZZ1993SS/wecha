@@ -1,0 +1,13 @@
+<!--pages/template/template.wxml 自定义模版-->
+<template name="newsItem">
+     <view class="news-item" bindtap="onOpenNewsDetail" data-index="{{index}}">
+       <view class="item-head">
+          <image class="author-image" src="{{new.writersUrl}}"></image>
+          <text class="author">{{new.writers}}</text>
+          <text class="publish">发表于{{new.publishDateStr}}</text>
+       </view>
+       <text class="news-title">{{new.title}}</text>
+       <image class="new-image" src="{{new.newsUrl}}"></image>
+       <text class="description">{{new.description}}</text>
+     </view>
+</template>
