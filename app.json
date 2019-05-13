@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/movie/movie",
     "pages/news/news",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/news/news-detail"
+    "pages/news/news-detail",
+    "pages/movie/movie-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,15 +15,15 @@
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "list":[
+    "list": [
       {
-            "pagePath": "pages/news/news",
-            "text": "新闻",
-            "iconPath": "./images/news.png",
-            "selectedIconPath": "./images/news_selected.png"
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "./images/news.png",
+        "selectedIconPath": "./images/news_selected.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/movie/movie",
         "text": "电影",
         "iconPath": "./images/movie.png",
         "selectedIconPath": "./images/movie_selected.png"

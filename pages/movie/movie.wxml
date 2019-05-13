@@ -1,0 +1,6 @@
+<!--pages/movie.wxml-->
+<swiper indicator-dots='true' autoplay='true' interval='8000' class="movie-banner">
+  <swiper-item wx:for="{{intheatersList}}" wx:key="index" wx:for-item="movie">
+   <image src="{{movie.images.large}}" mode="aspectFill" bindtap="openDetail" data-movie-id="{{movie.id}}"></image>
+  </swiper-item>
+</swiper>
