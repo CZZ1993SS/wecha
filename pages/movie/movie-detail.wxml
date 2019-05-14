@@ -1,2 +1,44 @@
 <!--pages/movie/movie-detail.wxml-->
-<text>pages/movie/movie-detail.wxml</text>
+<wxs src="./../wxs/rating.wxs" module="rating" />
+<import src="../template/template.wxml" />
+
+<view class="container">
+   <view class="movie-info-container">
+     <image src="{{movieDetail.images.large}}" class="movie-image"></image>
+
+     <view class="movie-info">
+       
+       <text class="movie-title">{{movieDetail.title}}</text>
+       
+       <text class="movie-in-threater">{{movieDetail.countries}} / {{movieDetail.genres}} / {{movieDetail.year}}年上映 > </text>
+       
+       <template is="ratingStar" data="{{average: movieDetail.rating.average}}"></template>
+       
+       <view class="movie-count">
+          <image src="../../images/wish.png"></image>
+          <text>{{movieDetail.wish_count}}</text>
+          <image src="../../images/comments.png"></image>
+          <text>{{movieDetail.comments_count}}</text>
+       
+       </view>
+
+     </view>
+
+   </view>
+
+   <view class="movie-description-container">
+       <text class="title">电影简介</text>
+       <text class="description">{{movieDetail.summary}}</text>
+   </view>
+
+   <view class="movie-avatars-container">
+       <text class="title">影人信息</text>
+       <view class="avatars">
+          <view wx:for="{{movieDetail.casts}}" wx:key="index" wx:for-item="avatar">
+            <image src="{{avatar.avatars.large}}"></image>
+            <text>{{avatar.name}}</text>
+          </view>
+       </view>
+   </view>
+   
+</view>

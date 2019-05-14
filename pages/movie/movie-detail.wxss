@@ -1,1 +1,102 @@
 /* pages/movie/movie-detail.wxss */
+
+.movie-image{
+  width: 210rpx;
+  height: 300rpx;
+}
+
+.movie-info-container{
+  display: flex;
+  padding: 30rpx;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+}
+
+.movie-info{
+  display: flex;
+  padding: 30rpx;
+  flex-direction: column;
+}
+
+.movie-title{
+  font-size: 36rpx;
+}
+
+.movie-in-threater{
+  font-size: 28rpx;
+  color: #8a8a8a;
+}
+
+.movie-rating image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.movie-rating text{
+  color: #8a8a8a;
+  font-size: 24rpx;
+  padding: 10rpx;
+}
+
+.movie-count{
+  width: 250rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie-count image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.movie-count text{
+  font-size: 28rpx;
+  color: #8a8a8a;
+}
+
+.avatars image{
+  width: 210rpx;
+  height: 300rpx;
+}
+
+.movie-description-container{
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+
+.title{
+  padding: 20rpx 0;
+  font-size: 36rpx;
+}
+
+.description{
+  font-size: 28rpx;
+}
+
+.avatars {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.avatars view{
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.avatars image{
+  width: 210rpx;
+  height: 300rpx;
+}
+
+.movie-avatars-container{
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+

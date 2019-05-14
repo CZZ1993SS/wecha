@@ -5,14 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      movieDetail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _that = this;
     var movieId = options.movieId;
+    wx.request({
+      url: "http://t.yushu.im/v2/movie/subject/" + movieId,
+      success:function(data){
+        _that.setData({
+          movieDetail: data.data
+        })
+      }
+
+    })
   },
 
   /**

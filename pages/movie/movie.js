@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bannerImages: ["../../images/news/timg.jpeg",
+    bannerImages: [
+      "../../images/news/timg.jpeg",
       "../../images/news/huawei.jpeg",
       "../../images/news/ai.jpeg",
       "../../images/news/5g.jpeg"],

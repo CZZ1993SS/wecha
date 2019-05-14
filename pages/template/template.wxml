@@ -1,4 +1,6 @@
 <!--pages/template/template.wxml 自定义模版-->
+<wxs src="./../wxs/rating.wxs" module="rating" />
+
 <template name="newsItem">
      <view class="news-item" bindtap="onOpenNewsDetail" data-index="{{index}}">
        <view class="item-head">
@@ -10,4 +12,14 @@
        <image class="new-image" src="{{new.newsUrl}}"></image>
        <text class="description">{{new.description}}</text>
      </view>
+</template>
+
+
+<template name="ratingStar">
+       <view class="movie-rating">
+         <block wx:for="{{[1,2,3,4,5]}}" wx:key="index" wx:for-item="ratingItem">
+         <image src="../../images/star_{{rating.ratingConvert(average) >= ratingItem ? 1:0}}.png"></image>
+         </block>
+         <text>{{average}}</text>
+       </view>
 </template>
