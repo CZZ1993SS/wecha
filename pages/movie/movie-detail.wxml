@@ -4,7 +4,7 @@
 
 <view class="container">
    <view class="movie-info-container">
-     <image src="{{movieDetail.images.large}}" class="movie-image"></image>
+     <image src="{{movieDetail.images.large}}" class="movie-image" bindtap="onPreviewImage" data-image-url="{{movieDetail.images.large}}"></image>
 
      <view class="movie-info">
        
@@ -35,7 +35,7 @@
        <text class="title">影人信息</text>
        <view class="avatars">
           <view wx:for="{{movieDetail.casts}}" wx:key="index" wx:for-item="avatar">
-            <image src="{{avatar.avatars.large}}"></image>
+            <image src="{{avatar.avatars.large}}" bindtap="onPreviewImage" data-image-url="{{avatar.avatars.large}}"></image>
             <text>{{avatar.name}}</text>
           </view>
        </view>
