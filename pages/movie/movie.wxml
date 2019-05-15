@@ -9,7 +9,7 @@
 <view class="comming-soon-container">
   <view class="comming-container-title">
      <text class="container-title">即将上映</text>
-     <text class="more">更多></text>
+     <text class="more" bindtap="openMore">更多></text>
   </view>
   <view class="movie-list">
      <block wx:for="{{commingSoonList}}" wx:key="index">

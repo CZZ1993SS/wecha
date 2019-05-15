@@ -88,6 +88,13 @@ Page({
     })
 
 
+  },
+
+
+  openMore:function(event){
+     wx.navigateTo({
+       url: '/pages/movie/movie-more',
+     })
   }
 
 

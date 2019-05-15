@@ -5,7 +5,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/news/news-detail",
-    "pages/movie/movie-detail"
+    "pages/movie/movie-detail",
+    "pages/movie/movie-more"
   ],
   "window": {
     "backgroundTextStyle": "light",
