@@ -27,7 +27,7 @@
 
 <template name="movieItem">
    <view class="movie-Item" bindtap="openDetail" data-movie-id="{{item.id}}">
-     <image class="movie-image" src="{{item.images.large}}" bindtap="onPreviewImage" data-image-url="{{item.images.large}}"></image>
+     <image class="movie-image" src="{{item.images.large}}" bindtap="onPreviewImage" data-image-url="{{item.images.large}}" binderror="onImageError" data-index="{{index}}"></image>
      <text class="title"></text>
      <template is="ratingStar" data="{{average: item.rating.average}}"></template>
    </view>

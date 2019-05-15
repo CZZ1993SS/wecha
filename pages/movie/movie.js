@@ -145,6 +145,24 @@ Page({
     this.getTop250List();
   },
 
+  onImageError: function(event){
+
+    var index = event.currentTarget.dataset.index;
+
+    var top250List = this.data.top250List;
+
+    var movieItem = top250List[index];
+
+    movieItem.images.large = "../../images/error_img.jpg";
+
+    top250List[index] = movieItem;
+    
+    this.data.top250List[index] = movieItem;
+
+    this.setData({
+      top250List: top250List
+    })
+  }
 
 
 })
