@@ -10,7 +10,8 @@ Page({
       "../../images/news/huawei.jpeg",
       "../../images/news/ai.jpeg",
       "../../images/news/5g.jpeg"],
-      intheatersList: []
+      intheatersList: [],
+      commingSoonList: []
   },
 
   /**
@@ -18,27 +19,11 @@ Page({
    */
   onLoad: function (options) {
 
-     var _this = this;
+    var _this = this;
+    
+    _this.getInTheatersList();
 
-     wx.request({
-       url: "http://t.yushu.im/v2/movie/in_theaters",
-       data:{
-         count:5
-       },
-       success:function(data){
-         _this.setData({
-           intheatersList: data.data.subjects
-         })
-       },
-
-       fail: function(data){
-          wx.showToast({
-            title: "网络请求失败！",
-            icon: "none"
-          })
-       }
-
-     })
+    _this.getCommingSoonList();
   },
 
   /**
@@ -49,6 +34,62 @@ Page({
     wx.navigateTo({
       url: '/pages/movie/movie-detail?movieId=' + movieId,
     })
+  },
+
+  getInTheatersList: function(){
+
+    var _this = this;
+
+    wx.request({
+      url: "http://t.yushu.im/v2/movie/in_theaters",
+      data: {
+        count: 5
+      },
+      success: function (data) {
+        _this.setData({
+          intheatersList: data.data.subjects
+        })
+      },
+
+      fail: function (data) {
+        wx.showToast({
+          title: "网络请求失败！",
+          icon: "none"
+        })
+      }
+
+    })
+
+
+  },
+
+  getCommingSoonList: function () {
+
+    var _this = this;
+
+    wx.request({
+      url: "http://t.yushu.im/v2/movie/coming_soon",
+      data: {
+        count: 3
+      },
+      success: function (data) {
+        _this.setData({
+          commingSoonList: data.data.subjects
+        })
+      },
+
+      fail: function (data) {
+        wx.showToast({
+          title: "网络请求失败！",
+          icon: "none"
+        })
+      }
+
+    })
+
+
   }
+
+
 
 })

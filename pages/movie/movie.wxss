@@ -1,4 +1,6 @@
 /* pages/movie.wxss */
+@import "../template/template.wxss";
+
 page{
   background-color: #eee;
 }
@@ -10,4 +12,32 @@ page{
 
 .movie-banner image{
   width:100%;
+}
+
+.comming-soon-container{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.comming-container-title{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.container-title{
+  font-size: 36rpx;
+}
+
+.more{
+  font-size: 28rpx;
+  color: #b2b2b2;
+}
+
+.movie-list{
+  display: flex;
+  padding: 0 30rpx 30rpx 30rpx;
+  flex-direction: row;
+  justify-content: space-between;
 }

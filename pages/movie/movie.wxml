@@ -1,6 +1,19 @@
 <!--pages/movie.wxml-->
+<import src="../template/template.wxml" />
+
 <swiper indicator-dots='true' autoplay='true' interval='8000' class="movie-banner">
   <swiper-item wx:for="{{intheatersList}}" wx:key="index" wx:for-item="movie">
    <image src="{{movie.images.large}}" mode="aspectFill" bindtap="openDetail" data-movie-id="{{movie.id}}"></image>
   </swiper-item>
 </swiper>
+<view class="comming-soon-container">
+  <view class="comming-container-title">
+     <text class="container-title">即将上映</text>
+     <text class="more">更多></text>
+  </view>
+  <view class="movie-list">
+     <block wx:for="{{commingSoonList}}" wx:key="index">
+        <template is="movieItem" data="{{item}}" ></template>
+     </block>
+  </view>
+</view>
