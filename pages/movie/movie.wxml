@@ -6,7 +6,7 @@
    <image src="{{movie.images.large}}" mode="aspectFill" bindtap="openDetail" data-movie-id="{{movie.id}}"></image>
   </swiper-item>
 </swiper>
-<view class="comming-soon-container">
+<view class="movie-container">
   <view class="comming-container-title">
      <text class="container-title">即将上映</text>
      <text class="more" bindtap="openMore">更多></text>
@@ -16,4 +16,16 @@
         <template is="movieItem" data="{{item}}" ></template>
      </block>
   </view>
+</view>
+
+<view class="movie-container">
+  <view class="comming-container-title">
+     <text class="container-title">Top250</text>
+  </view>
+  <view class="movie-list">
+     <block wx:for="{{top250List}}" wx:key="index">
+        <template is="movieItem" data="{{item}}" ></template>
+     </block>
+  </view>
+  <template is="loading" wx:if="{{showLoading}}"></template>
 </view>

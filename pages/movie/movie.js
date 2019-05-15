@@ -11,7 +11,9 @@ Page({
       "../../images/news/ai.jpeg",
       "../../images/news/5g.jpeg"],
       intheatersList: [],
-      commingSoonList: []
+      commingSoonList: [],
+      top250List: [],
+      showLoading: false
   },
 
   /**
@@ -24,6 +26,8 @@ Page({
     _this.getInTheatersList();
 
     _this.getCommingSoonList();
+
+    _this.getTop250List();
   },
 
   /**
@@ -90,12 +94,56 @@ Page({
 
   },
 
+   
+  getTop250List: function () {
+
+    var _this = this;
+    var start = _this.data.top250List.length;
+
+    wx.request({
+      url: "http://t.yushu.im/v2/movie/top250",
+      data: {
+        start: start,
+        count: 9
+      },
+      success: function (data) {
+        var tempList = _this.data.top250List;
+        for (var i = 0; i < data.data.subjects.length; i++) {
+          tempList.push(data.data.subjects[i])
+        }
+        _this.setData({
+          top250List: tempList,
+          showLoading: false
+        })
+      },
+
+      fail: function (data) {
+        wx.showToast({
+          title: "网络请求失败！",
+          icon: "none"
+        })
+      }
+
+    })
+
+
+  },
 
   openMore:function(event){
      wx.navigateTo({
        url: '/pages/movie/movie-more',
      })
-  }
+  },
+
+  /**
+ * 页面上拉触底事件的处理函数
+ */
+  onReachBottom: function (event) {
+    this.setData({
+      showLoading: true
+    })
+    this.getTop250List();
+  },
 
 
 
