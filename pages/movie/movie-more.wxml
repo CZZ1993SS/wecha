@@ -5,4 +5,5 @@
    <block wx:for="{{commingSoonList}}" wx:key="index-more">
         <template is="movieItem" data="{{item}}" ></template>
    </block>
+   <template is="loading" wx:if="{{showLoading}}"></template>
 </view>

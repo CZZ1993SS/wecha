@@ -32,3 +32,11 @@
      <template is="ratingStar" data="{{average: item.rating.average}}"></template>
    </view>
 </template>
+
+
+<template name="loading">
+   <view class="loading">
+      <image src="../../images/loading_ico.png"></image>
+      <text>正在获取更多电影...</text>
+   </view>
+</template>

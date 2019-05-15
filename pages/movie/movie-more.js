@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    commingSoonList: []
+    commingSoonList: [],
+    showLoading: false
   },
 
   /**
@@ -20,28 +21,37 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: function (event) {
+    this.setData({
+      showLoading: true
+    })
+    this.getCommingSoonList();
   },
 
   getCommingSoonList: function () {
 
     var _this = this;
+    var start = _this.data.commingSoonList.length;
 
     wx.request({
       url: "http://t.yushu.im/v2/movie/coming_soon",
       data: {
-        count: 9
+        start: start,
+        count: 12
       },
       success: function (data) {
+        var tempList = _this.data.commingSoonList;
+        for (var i=0; i<data.data.subjects.length; i++){
+          tempList.push(data.data.subjects[i])
+        }
         _this.setData({
-          commingSoonList: data.data.subjects
+          commingSoonList: tempList,
+          showLoading: false
         })
       },
 

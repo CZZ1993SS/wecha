@@ -62,3 +62,28 @@
   width: 210rpx;
   height: 300rpx;
 }
+
+.loading{
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8a8a8a;
+}
+
+.loading image{
+  margin-right: 10rpx;
+  width:40rpx;
+  height: 40rpx;
+  animation: loading 3s infinite linear; /* 3s 无限循环 匀速 */
+}
+
+@keyframes loading{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
