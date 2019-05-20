@@ -81,7 +81,7 @@
 }
 
 .avatars image{
-  width: 210rpx;
+  width: 230rpx;
   height: 300rpx;
 }
 

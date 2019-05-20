@@ -42,3 +42,21 @@ page{
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+
+.movie-search-container{
+  padding: 20rpx 30rpx 0rpx;
+}
+
+.movie-search-container input{
+  padding: 0rpx 30rpx;
+  background-color: #fff;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+}
+
+.search-empty{
+  font-size: 28rpx;
+  color: #b2b2b2;
+  text-align: center;
+}

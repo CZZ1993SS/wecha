@@ -6,6 +6,13 @@
    <image src="{{movie.images.large}}" mode="aspectFill" bindtap="openDetail" data-movie-id="{{movie.id}}"></image>
   </swiper-item>
 </swiper>
+
+
+<view class="movie-search-container">
+   <input placeholder="请输入想要搜索的电影信息..." bindinput="onSearch"></input>
+</view>
+
+<block wx:if="{{!isSearching}}">
 <view class="movie-container">
   <view class="comming-container-title">
      <text class="container-title">即将上映</text>
@@ -29,3 +36,15 @@
   </view>
   <template is="loading" wx:if="{{showLoading}}"></template>
 </view>
+</block>
+
+<block wx:else>
+  <view class="movie-container">
+    <view class="search-empty" wx:if="{{isSearchEmpty}}">找不到该电影...</view>
+    <view class="movie-list">
+      <block wx:for="{{searchList}}" wx:key="index">
+          <template is="movieItem" data="{{item: item, index: index}}" ></template>
+      </block>
+    </view>
+  </view>
+</block>

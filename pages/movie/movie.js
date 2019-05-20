@@ -13,7 +13,10 @@ Page({
       intheatersList: [],
       commingSoonList: [],
       top250List: [],
-      showLoading: false
+      searchList: [],
+      showLoading: false,
+      isSearching: false,
+      isSearchEmpty: false
   },
 
   /**
@@ -129,6 +132,46 @@ Page({
 
   },
 
+  getSearchList: function (queryValue) {
+
+    var _this = this;
+
+    wx.request({
+      url: "http://t.yushu.im/v2/movie/search",
+      data: {
+        q: queryValue
+      },
+      success: function (data) {
+
+        var searchList = data.data.subjects;
+        var isSearchEmpty = false;
+
+        if (searchList.length == 0){
+          isSearchEmpty = true;
+        }else{
+          isSearchEmpty = false;
+        }
+
+
+        _this.setData({
+          searchList: data.data.subjects,
+          isSearching: true,
+          isSearchEmpty: isSearchEmpty
+        })
+      },
+
+      fail: function (data) {
+        wx.showToast({
+          title: "网络请求失败！",
+          icon: "none"
+        })
+      }
+
+    })
+
+
+  },
+
   openMore:function(event){
      wx.navigateTo({
        url: '/pages/movie/movie-more',
@@ -162,6 +205,19 @@ Page({
     this.setData({
       top250List: top250List
     })
+  },
+
+  onSearch:function(event){
+
+    if (event.detail.value){
+      this.getSearchList(event.detail.value);
+    }else{
+      this.setData({
+        isSearching: false
+      })
+    }
+    
+
   }
 
 

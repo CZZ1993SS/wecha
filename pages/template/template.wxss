@@ -79,6 +79,20 @@
   animation: loading 3s infinite linear; /* 3s 无限循环 匀速 */
 }
 
+.movie-Item{
+  width: 210rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+
+.movie-Item text.title{
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 @keyframes loading{
   from{
     transform: rotate(0deg);
@@ -87,3 +101,4 @@
     transform: rotate(360deg);
   }
 }
+
